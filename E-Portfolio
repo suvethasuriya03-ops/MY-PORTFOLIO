@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Suvetha | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f8f8fc;
+    color: #181824;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid #eeeeF5;
+}
+
+.nav-container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 18px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo span,
+footer span {
+    color: #7c4dff;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #7c4dff;
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+    padding: 140px 8% 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    background:
+        radial-gradient(circle at 80% 20%, #e9ddff 0, transparent 30%),
+        #f8f8fc;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.small-heading {
+    color: #7c4dff;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 9vw, 100px);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: clamp(25px, 4vw, 42px);
+    margin-bottom: 20px;
+}
+
+.hero h2 span {
+    color: #7c4dff;
+}
+
+.hero-text {
+    color: #666675;
+    font-size: 17px;
+    max-width: 600px;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 13px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.primary-btn {
+    background: #7c4dff;
+    color: white;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(124,77,255,0.3);
+}
+
+.secondary-btn {
+    border: 1px solid #d9d9e4;
+    background: white;
+}
+
+.secondary-btn:hover {
+    border-color: #7c4dff;
+    color: #7c4dff;
+}
+
+
+/* ================= PROFILE CARD ================= */
+
+.hero-card {
+    width: 330px;
+    min-width: 280px;
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    background: white;
+
+    border: 1px solid #eeeeF5;
+    border-radius: 25px;
+
+    box-shadow: 0 20px 60px rgba(40,30,80,0.1);
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.profile-circle {
+    width: 130px;
+    height: 130px;
+
+    margin: auto auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eee8ff;
+    color: #7c4dff;
+
+    font-size: 65px;
+    font-weight: 700;
+}
+
+.hero-card h3 {
+    font-size: 25px;
+}
+
+.hero-card p {
+    color: #777;
+}
+
+.quick-skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.quick-skills span,
+.project-tech span {
+
+    background: #f0ecff;
+    color: #6840df;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+@keyframes floating {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section {
+    max-width: 1150px;
+    margin: auto;
+    padding: 100px 25px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title p {
+    color: #7c4dff;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 40px;
+    margin-top: 5px;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-container {
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.about-text h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #666675;
+    margin-bottom: 17px;
+}
+
+.about-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.info-box {
+
+    display: flex;
+
+    gap: 18px;
+
+    padding: 22px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    border: 1px solid #eeeeF5;
+
+    transition: 0.3s;
+}
+
+.info-box:hover {
+    transform: translateX(5px);
+    border-color: #c9b8ff;
+}
+
+.info-box > span {
+    font-size: 30px;
+}
+
+.info-box h4 {
+    font-size: 17px;
+}
+
+.info-box p {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* ================= SKILLS ================= */
+
+.skills-section {
+
+    max-width: none;
+
+    background: #f0edff;
+
+    padding-left: max(25px,calc((100% - 1100px)/2));
+
+    padding-right: max(25px,calc((100% - 1100px)/2));
+}
+
+.skills-grid {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.skill-card {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    border: 1px solid #e6e0ff;
+
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(80,50,150,0.1);
+}
+
+.skill-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* ================= PROJECTS ================= */
+
+.projects-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 22px;
+}
+
+.project-card {
+
+    background: white;
+
+    border: 1px solid #eeeeF5;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.project-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(40,30,80,0.1);
+}
+
+.project-number {
+
+    padding: 18px 22px;
+
+    color: #7c4dff;
+
+    font-weight: 700;
+
+    background: #f2efff;
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-content h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.project-content p {
+
+    color: #70707e;
+
+    font-size: 14px;
+}
+
+.project-tech {
+
+    display: flex;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+
+    margin: 20px 0;
+}
+
+.project-link {
+
+    color: #7042ed;
+
+    font-weight: 600;
+
+    font-size: 14px;
+}
+
+
+/* ================= EDUCATION ================= */
+
+.timeline {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    position: relative;
+}
+
+.timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 10px;
+
+    top: 0;
+
+    height: 100%;
+
+    width: 2px;
+
+    background: #d8ceff;
+}
+
+.timeline-item {
+
+    position: relative;
+
+    padding-left: 45px;
+}
+
+.timeline-dot {
+
+    position: absolute;
+
+    left: 1px;
+
+    top: 8px;
+
+    width: 20px;
+
+    height: 20px;
+
+    background: #7c4dff;
+
+    border: 4px solid #eee8ff;
+
+    border-radius: 50%;
+}
+
+.timeline-content {
+
+    background: white;
+
+    border: 1px solid #eeeeF5;
+
+    padding: 30px;
+
+    border-radius: 18px;
+}
+
+.timeline-year {
+
+    color: #7c4dff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.timeline-content h3 {
+    margin: 8px 0;
+}
+
+.timeline-content h4 {
+
+    color: #666;
+
+    font-weight: 500;
+}
+
+.timeline-content p {
+
+    margin-top: 12px;
+
+    color: #777;
+}
+
+
+/* ================= CERTIFICATIONS ================= */
+
+.cert-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.cert-card {
+
+    padding: 30px;
+
+    border: 1px solid #eeeeF5;
+
+    border-radius: 18px;
+
+    background: white;
+}
+
+.cert-icon {
+
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.cert-card p {
+
+    color: #777;
+
+    font-size: 14px;
+
+    margin: 10px 0 20px;
+}
+
+.cert-label {
+
+    color: #7c4dff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* ================= RESUME ================= */
+
+.resume-section {
+
+    max-width: 1100px;
+
+    margin: 40px auto 100px;
+
+    padding: 45px;
+
+    background: #191624;
+
+    color: white;
+
+    border-radius: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.resume-section > div {
+    max-width: 650px;
+}
+
+.resume-section p:first-child {
+
+    color: #bca8ff;
+
+    letter-spacing: 2px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.resume-section h2 {
+
+    margin: 5px 0;
+
+    font-size: 30px;
+}
+
+.resume-section p:last-child {
+    color: #bbb;
+}
+
+.resume-btn {
+
+    background: white;
+
+    color: #222;
+
+    white-space: nowrap;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-container {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+}
+
+.contact-text h3 {
+
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+.contact-text p {
+    color: #70707e;
+}
+
+.contact-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.contact-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 18px 20px;
+
+    background: white;
+
+    border: 1px solid #eeeeF5;
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+
+    transform: translateX(6px);
+
+    border-color: #c8b7ff;
+}
+
+.contact-card > span {
+    font-size: 27px;
+}
+
+.contact-card small {
+
+    display: block;
+
+    color: #888;
+}
+
+.contact-card strong {
+    font-size: 14px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    background: #14121d;
+
+    color: white;
+
+    padding: 40px 20px;
+
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 25px;
+}
+
+.footer-content p {
+
+    color: #999;
+
+    margin-top: 5px;
+}
+
+.copyright {
+
+    margin-top: 20px !important;
+
+    font-size: 12px;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px) {
+
+    .hero {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        justify-content: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .about-container,
+    .contact-container {
+
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .cert-grid {
+
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .resume-section {
+
+        margin-left: 25px;
+
+        margin-right: 25px;
+    }
+}
+
+
+@media(max-width:700px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+
+        left: 0;
+
+        width: 100%;
+
+        background: white;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        box-shadow:
+            0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .cert-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .resume-section {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .resume-btn {
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .contact-card strong {
+        font-size: 12px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+<div class="nav-container">
+
+<a href="#home" class="logo">
+Suvetha<span>.</span>
+</a>
+
+<button class="menu-btn" id="menuBtn">
+☰
+</button>
+
+<nav id="navMenu">
+
+<a href="#home">Home</a>
+
+<a href="#about">About</a>
+
+<a href="#skills">Skills</a>
+
+<a href="#projects">Projects</a>
+
+<a href="#education">Education</a>
+
+<a href="#certifications">Certifications</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home" class="hero">
+
+<div class="hero-content">
+
+<p class="small-heading">
+HELLO, I'M
+</p>
+
+<h1>
+Suvetha
+</h1>
+
+<h2>
+CSE Student & <span>Developer</span>
+</h2>
+
+<p class="hero-text">
+
+I am a Computer Science Engineering student passionate about
+programming and building useful technology
+projects using AI.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#projects" class="btn primary-btn">
+View My Projects
+</a>
+
+<a href="#contact" class="btn secondary-btn">
+Contact Me
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-card">
+
+<div class="profile-circle">
+S
+</div>
+
+<h3>Suvetha</h3>
+
+<p>
+Computer Science Engineering
+</p>
+
+<div class="quick-skills">
+
+<span>Python</span>
+<span>Web</span>
+<span>GitHub</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="section">
+
+<div class="section-title">
+
+<p>
+GET TO KNOW ME
+</p>
+
+<h2>
+About Me
+</h2>
+
+</div>
+
+
+<div class="about-container">
+
+
+<div class="about-text">
+
+<h3>
+Hi, I'm Suvetha 👋
+</h3>
+
+<p>
+
+I am a Computer Science Engineering student interested in
+software development, programming and some projects.
+
+</p>
+
+<p>
+
+I enjoy learning by building projects and learning new languages. I am currently improving my
+programming, web development and problem-solving skills.
+
+</p>
+
+<p>
+
+My goal is to become a skilled software professional and prompt engineer and
+contribute to meaningful technology projects.
+
+</p>
+
+</div>
+
+
+<div class="about-info">
+
+
+<div class="info-box">
+
+<span>🎓</span>
+
+<div>
+
+<h4>Education</h4>
+
+<p>
+Computer Science Engineering
+</p>
+
+</div>
+
+</div>
+
+
+<div class="info-box">
+
+<span>💻</span>
+
+<div>
+
+<h4>Interests</h4>
+
+<p>
+Software Development & Technology
+and Prompt engineering
+</p>
+
+</div>
+
+</div>
+
+
+<div class="info-box">
+
+<span>🚀</span>
+
+<div>
+
+<h4>Goal</h4>
+
+<p>
+Grow as a Software Developer
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills" class="section skills-section">
+
+<div class="section-title">
+
+<p>
+WHAT I WORK WITH
+</p>
+
+<h2>
+My Skills
+</h2>
+
+</div>
+
+
+<div class="skills-grid">
+
+
+<div class="skill-card">
+
+<div class="skill-icon">
+🐍
+</div>
+
+<h3>
+Python
+</h3>
+
+<p>
+Programming, problem solving and application development.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-icon">
+☕
+</div>
+
+<h3>
+Java
+</h3>
+
+<p>
+few learnings and some Object-oriented programming and application concepts.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-icon">
+🌐
+</div>
+
+<h3>
+HTML & CSS
+</h3>
+
+<p>
+Creating responsive and user-friendly websites.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-icon">
+⚡
+</div>
+
+
+
+<div class="skill-card">
+
+<div class="skill-icon">
+🗄️
+</div>
+
+
+
+<div class="skill-card">
+
+<div class="skill-icon">
+🔧
+</div>
+
+<h3>
+Git & GitHub
+</h3>
+
+<p>
+Version control and managing software projects.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects" class="section">
+
+<div class="section-title">
+
+<p>
+MY WORK
+</p>
+
+<h2>
+Featured Projects
+</h2>
+
+</div>
+
+
+<div class="projects-grid">
+
+
+<div class="project-card">
+
+<div class="project-number">
+01
+</div>
+
+<div class="project-content">
+
+<h3>
+Student Performance Analysis
+</h3>
+
+<p>
+
+A dashboard-based application designed to analyze
+student performance and provide useful insights for
+students, teachers and administrators.
+
+</p>
+
+<div class="project-tech">
+
+<span>Python</span>
+<span>Dashboard</span>
+<span>Data Analysis</span>
+
+</div>
+
+<a href="#" class="project-link">
+View Project →
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="project-card">
+
+<div class="project-number">
+02
+</div>
+
+<div class="project-content">
+
+<h3>
+Student Hub
+</h3>
+
+<p>
+
+A student-focused web application that brings useful
+campus information and features together in one place.
+
+</p>
+
+<div class="project-tech">
+
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+
+</div>
+
+<a href="#" class="project-link">
+View Project →
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="project-card">
+
+<div class="project-number">
+03
+</div>
+
+<div class="project-content">
+
+<h3>
+Free Class Locator
+</h3>
+
+<p>
+
+A web-based system designed to help students locate
+available classrooms and find relevant class information
+easily.
+
+</p>
+
+<div class="project-tech">
+
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+
+</div>
+
+<a href="#" class="project-link">
+View Project →
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education" class="section">
+
+<div class="section-title">
+
+<p>
+MY ACADEMIC JOURNEY
+</p>
+
+<h2>
+Education
+</h2>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<span class="timeline-year">
+CURRENT
+</span>
+
+<h3>
+Bachelor's Degree in Computer Science Engineering
+</h3>
+
+<h4>
+Computer Science Engineering
+</h4>
+
+<p>
+
+Currently pursuing my degree with a focus on programming,
+software development, projects,hackathons and others..
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= CERTIFICATIONS ================= -->
+
+<section id="certifications" class="section">
+
+<div class="section-title">
+
+<p>
+LEARNING & DEVELOPMENT
+</p>
+
+<h2>
+Certifications & Achievements
+</h2>
+
+</div>
+
+
+<div class="cert-grid">
+
+
+<div class="cert-card">
+
+<div class="cert-icon">
+🏆
+</div>
+
+<h3>
+Technical Certifications
+</h3>
+
+<p>
+
+Add your completed programming, technology and
+professional certifications here.
+
+</p>
+
+<span class="cert-label">
+Add Certificate
+</span>
+
+</div>
+
+
+<div class="cert-card">
+
+<div class="cert-icon">
+💡
+</div>
+
+<h3>
+Hackathons & Events
+</h3>
+
+<p>
+
+Add hackathons, coding competitions, workshops and
+technical events you participated in.
+
+</p>
+
+<span class="cert-label">
+Add Achievement
+</span>
+
+</div>
+
+
+<div class="cert-card">
+
+<div class="cert-icon">
+📚
+</div>
+
+<h3>
+Research & Learning
+</h3>
+
+<p>
+
+Add research papers, courses, workshops or technologies
+you have explored.
+
+</p>
+
+<span class="cert-label">
+Add Experience
+</span>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="section">
+
+<div class="section-title">
+
+<p>
+LET'S CONNECT
+</p>
+
+<h2>
+Contact Me 
+</h2>
+
+</div>
+
+
+<div class="contact-container">
+
+
+<div class="contact-text">
+
+<h3>
+Let's build something together.
+</h3>
+
+<p>
+
+I'm always interested in learning, collaborating and
+working on interesting technology projects.
+
+</p>
+
+</div>
+
+
+<div class="contact-links">
+
+
+<a href="mailto:your-email@example.com"
+class="contact-card">
+
+<span>📧</span>
+
+<div>
+
+<small>Email</small>
+
+<strong>
+suvethasuriya@gmail.com
+</strong>
+
+</div>
+
+</a>
+
+
+<a href="https://github.com/"
+target="_blank"
+class="contact-card">
+
+<span>🐙</span>
+
+<div>
+
+<small>GitHub</small>
+
+<strong>
+github.com/suvethasuriya03
+</strong>
+
+</div>
+
+</a>
+
+
+<a href="https://www.linkedin.com/"
+target="_blank"
+class="contact-card">
+
+<span>💼</span>
+
+<div>
+
+<small>LinkedIn</small>
+
+<strong>
+linkedin.com/in/yourusername
+</strong>
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-content">
+
+<h3>
+Suvetha<span>.</span>
+</h3>
+
+<p>
+CSE Student  • Learner
+</p>
+
+<p class="copyright">
+
+© <span id="year"></span>
+Suvetha. All rights reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* MOBILE MENU */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const navMenu =
+document.getElementById("navMenu");
+
+
+menuBtn.addEventListener("click", function() {
+
+    navMenu.classList.toggle("active");
+
+});
+
+
+/* CLOSE MENU */
+
+const navLinks =
+document.querySelectorAll("#navMenu a");
+
+
+navLinks.forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        navMenu.classList.remove("active");
+
+    });
+
+});
+
+
+/* CURRENT YEAR */
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+
+/* SCROLL ANIMATION */
+
+const revealElements =
+document.querySelectorAll(
+".skill-card, .project-card, .cert-card, .info-box, .timeline-content"
+);
+
+
+const observer =
+new IntersectionObserver(
+
+function(entries) {
+
+    entries.forEach(function(entry) {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+},
+
+{
+    threshold: 0.15
+}
+
+);
+
+
+revealElements.forEach(function(element) {
+
+    element.classList.add("reveal");
+
+    observer.observe(element);
+
+});
+
+
+/* ACTIVE NAVIGATION */
+
+const sections =
+document.querySelectorAll("section[id]");
+
+const navigationLinks =
+document.querySelectorAll("nav a");
+
+
+window.addEventListener("scroll", function() {
+
+    let currentSection = "";
+
+    sections.forEach(function(section) {
+
+        const sectionTop =
+        section.offsetTop - 150;
+
+        const sectionHeight =
+        section.offsetHeight;
+
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+        ) {
+
+            currentSection =
+            section.getAttribute("id");
+
+        }
+
+    });
+
+
+    navigationLinks.forEach(function(link) {
+
+        link.classList.remove("active");
+
+        if (
+            link.getAttribute("href") ===
+            "#" + currentSection
+        ) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+</script>
+
+
+</body>
+</html>
